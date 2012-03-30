@@ -1,18 +1,18 @@
 Retractive Scroll Views for Android
 ======================
-This is a library for Android.
-This is a retractable HorizontalScrollView.
-You can also sync scrolling in views.
+Android向けのライブラリです。
+びよーんと伸びるHorizontalScrollViewです。
+複数のビューのスクロールの同期もできます。
 
-RetractiveHorizontalScrollView extends android.widget.HorizontalScrollView.
-In the future, I might add RetractiveVerticalScrollView extends android.widget.ScrollView, if you want to get it.
+RetractiveHorizontalScrollView は android.widget.HorizontalScrollView を継承しています。
+将来的には、ご要望次第で、android.widget.ScrollView を継承した RetractiveVerticalScrollViewも追加するかもしれません。
 
-Sample movie
+サンプル動画
 --------
 
 ...
 
-Download
+ダウンロード
 ------
 
 ### ver.0.1 ###
@@ -20,45 +20,45 @@ Download
 [ ![](https://github.com/images/modules/download/zip.png) ](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/zipball/0.1)
 [ ![](https://github.com/images/modules/download/tar.png) ](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/zipball/0.1)
 
-How to use
+使い方
 ------
 
-### How to retract a view ###
+### びよーん ###
 
-1. Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
+1. [RetractiveHorizontalScrollView][rhsv] を [android.widget.HorizontalScrollView][hsv] と同じように使います。
 
-### How to sync two RetractiveHorizontalScrollViews ###
+### 2つのRetractiveHorizontalScrollView][rhsv]を同期する ###
 
-1. Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
-2. Add a view to another view by [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv2].
+1. [RetractiveHorizontalScrollView][rhsv] を [android.widget.HorizontalScrollView][hsv] と同じように使います。
+2. [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv2] を使って、ビューをもう一方のビューに追加します。
 
-Sample code
+サンプルコード
 --------
 
-This is a sample code as sample movie.
+動画と同じサンプルコードです。
 
 ...
 
 Javadoc
 --------
 
-Please see detail at [javadoc][rhsv].
+詳細は [javadoc][rhsv] を視て下さい。
   
-License
+ライセンス
 ----------
 Copyright &copy; 2012 [ Tomoya Yamamoto 山本智世 ![profile_image] ][aboutme]
 
 Distributed under the [MIT License](http://www.opensource.org/licenses/mit-license.php "MIT License").  
 
-Contact
+連絡先
 --------
 
 [ Tomoya Yamamoto 山本智世 ![profile_image] ][aboutme] (tmyymmt+github@gmail.com)
 
-Reference Information
+参考情報
 --------
 
-You can see good ideas for about this kind of thing in Japanese.
+他に以下のサイトも参考になると思います。
 
 - [http://y-anz-m.blogspot.ca/2011/01/androidoverscroll.html](http://y-anz-m.blogspot.ca/2011/01/androidoverscroll.html)
 - [http://d.hatena.ne.jp/hdk_embedded/20110102/1293906357](http://d.hatena.ne.jp/hdk_embedded/20110102/1293906357)
