@@ -1,3 +1,5 @@
+[日本語](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/README.ja.md)
+
 Retractive Scroll Views for Android
 ======================
 This is a library for Android.

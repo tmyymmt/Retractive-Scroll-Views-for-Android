@@ -1,5 +1,8 @@
+[English](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android)
+
 Retractive Scroll Views for Android
 ======================
+
 Android向けのライブラリです。
 びよーんと伸びるHorizontalScrollViewです。
 複数のビューのスクロールの同期もできます。
@@ -27,7 +30,7 @@ RetractiveHorizontalScrollView は android.widget.HorizontalScrollView を継承
 
 1. [RetractiveHorizontalScrollView][rhsv] を [android.widget.HorizontalScrollView][hsv] と同じように使います。
 
-### 2つのRetractiveHorizontalScrollView][rhsv]を同期する ###
+### 2つのRetractiveHorizontalScrollViewを同期する ###
 
 1. [RetractiveHorizontalScrollView][rhsv] を [android.widget.HorizontalScrollView][hsv] と同じように使います。
 2. [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv2] を使って、ビューをもう一方のビューに追加します。
