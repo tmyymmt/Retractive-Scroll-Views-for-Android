@@ -61,4 +61,4 @@ You can see good ideas for about this kind of thing in Japanese.
 
 [profile_image]: http://tmyymmt.mine.nu/profile/profile-sq_16.png "Profile Image"
 [aboutme]: http://about.me/tmyymmt "about me"
-[rhsv]: https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android
+[rhsv]: http://tmyymmt.github.com/Retractive-Scroll-Views-for-Android/
