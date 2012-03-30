@@ -14,6 +14,11 @@ How to use
 
 1. Use RetractiveHorizontalScrollView or extending [RetractiveHorizontalScrollView.][rhsv]
 2. Add a view to another view by [RetractiveHorizontalScrollView#RetractiveHorizontalScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsvm]
+  
+Samples
+--------
+
+...
 
 Reference Information
 --------
