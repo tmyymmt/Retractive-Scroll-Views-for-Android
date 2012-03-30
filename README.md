@@ -4,6 +4,11 @@ This is a library for Android. You can sync and scroll in retractable views.
 
 RetractiveHorizontalScrollView extends android.widget.HorizontalScrollView. In the future, I will add RetractiveVerticalScrollView extends android.widget.ScrollView. if you want to get it.
 
+Sample movie
+--------
+
+...
+
 How to use
 ------
 ### Howto retract a view ###
@@ -20,7 +25,7 @@ Sample code
 
 ...
 
-Sample movie
+Javadoc
 --------
 
 ...
