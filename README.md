@@ -2,6 +2,7 @@
 
 Retractive Scroll Views for Android
 ======================
+
 This is a library for Android.
 This is a retractable HorizontalScrollView.
 You can also sync scrolling in views.

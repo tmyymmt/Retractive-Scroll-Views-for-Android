@@ -4,7 +4,7 @@ Retractive Scroll Views for Android
 ======================
 
 Android向けのライブラリです。
-びよーんと伸びるHorizontalScrollViewです。
+端までスクロースした時にびよーんと伸びるHorizontalScrollViewです。
 複数のビューのスクロールの同期もできます。
 
 RetractiveHorizontalScrollView は android.widget.HorizontalScrollView を継承しています。
