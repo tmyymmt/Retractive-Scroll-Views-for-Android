@@ -11,7 +11,7 @@ Sample movie
 
 How to use
 ------
-### Howto retract a view ###
+### How to retract a view ###
 
 1. Use RetractiveHorizontalScrollView or extending [RetractiveHorizontalScrollView.][rhsv]
 
