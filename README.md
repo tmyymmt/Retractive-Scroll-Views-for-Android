@@ -1,10 +1,12 @@
 
 
+
 Retractive Scroll Views for Android
 ======================
 This is a library for Android. You can sync and scroll in retractable views.
 
-RetractiveHorizontalScrollView extends android.widget.HorizontalScrollView. In the future, I will add RetractiveVerticalScrollView extends android.widget.ScrollView. if you want to get it.
+RetractiveHorizontalScrollView extends android.widget.HorizontalScrollView.
+In the future, I will add RetractiveVerticalScrollView extends android.widget.ScrollView, if you want to get it.
 
 Sample movie
 --------
@@ -28,7 +30,7 @@ How to use
 ### How to sync two views ###
 
 1. Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
-2. Add a view to another view by [RetractiveHorizontalScrollView#RetractiveHorizontalScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv2].
+2. Add a view to another view by [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv2].
 
 Sample code
 --------
