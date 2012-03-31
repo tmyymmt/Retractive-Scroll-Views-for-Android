@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc 
+        	access="protected" 
+        	author="true"
+        	destdir="javadoc" 
+        	doctitle="Retractive Scroll Views for Android" 
+        	nodeprecated="false" 
+        	nodeprecatedlist="false" 
+        	noindex="false" 
+        	nonavbar="false" 
+        	notree="false" 
+        	source="1.6"
+        	sourcepath="src"
+        	splitindex="true" 
+        	use="true" 
+        	version="true"
+        	classpath="C:\develop\android-sdk-windows\platforms\android-15\android.jar;."
+        	linkoffline="http://d.android.com/reference C:\develop\android-sdk-windows\docs\reference"
+    	    stylesheetfile="C:\develop\android-sdk-windows\docs\assets\android-developer-docs.css"
+        	>
+        	<link href="http://docs.oracle.com/javase/6/docs/api/"/>
+        </javadoc>
+    </target>
+</project>
