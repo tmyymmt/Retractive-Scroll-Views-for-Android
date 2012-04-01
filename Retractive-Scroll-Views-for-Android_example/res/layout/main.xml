@@ -25,7 +25,6 @@
       <TextView
         android:layout_width="@dimen/retractive_width"
         android:layout_height="fill_parent"
-        android:background="#ff00ffff"
         />
       <TextView
         android:id="@+id/child_content"
@@ -38,7 +37,6 @@
       <TextView
         android:layout_width="@dimen/retractive_width"
         android:layout_height="fill_parent"
-        android:background="#ff00ff00"
         />
     </LinearLayout>
   </nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
