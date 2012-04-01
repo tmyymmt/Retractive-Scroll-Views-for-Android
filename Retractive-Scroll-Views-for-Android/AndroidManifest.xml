@@ -3,12 +3,5 @@
     package="nu.mine.tmyymmt.android.widget"
     android:versionCode="1"
     android:versionName="1.0" >
-
     <uses-sdk android:minSdkVersion="4" />
-
-    <application
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" >
-    </application>
-
 </manifest>

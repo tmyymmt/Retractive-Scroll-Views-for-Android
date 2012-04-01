@@ -36,12 +36,12 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     private RetractiveHorizontalScrollView syncScrollView_ = null;
 
     /**
-     * The width of retracting.
+     * The width of retracting by pixel size.
      */
-    private int retractiveWidth_ = 0;
+    private int retractiveWidth_ = 300;
 
     /**
-     * This is double of retractiveWidth_.
+     * This is double of retractiveWidth_ by pixel size.
      */
     private int retractiveWidthDouble_ = 0;
 
@@ -96,24 +96,23 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     }
 
     /**
-     * Return the flag.
+     * Set retractive width by pixel size.
      * 
-     * @return true: move when this is on scroll changed. false: don't move when
-     *         this is on scroll changed.
+     * @param retractiveWidth
+     *            retractive width by pixel size.
      */
-    public boolean isMoveOnScrollChanged() {
-        return moveOnScrollChangedFlag_;
+    public void setRetractiveWidth(int retractiveWidth) {
+        retractiveWidth_ = retractiveWidth;
+        retractiveWidthDouble_ = retractiveWidth_ * 2;
     }
 
     /**
-     * Set the flag.
+     * Return retractive width by pixel size.
      * 
-     * @param move
-     *            true: move when this is on scroll changed. false: don't move
-     *            when this is on scroll changed.
+     * @return retractive width by pixel size
      */
-    public void setMoveOnScrollChanged(boolean move) {
-        this.moveOnScrollChangedFlag_ = move;
+    public int getRetractiveWidth() {
+        return retractiveWidth_;
     }
 
     /**
@@ -136,23 +135,44 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     }
 
     /**
-     * Return retractive width.
+     * Remove sync view.
      * 
-     * @return retractive width
+     * @param syncScrollView
+     * 
      */
-    public int getRetractiveWidth() {
-        return retractiveWidth_;
+    public void removeSyncScrollView(RetractiveHorizontalScrollView syncScrollView) {
+        this.syncScrollView_ = null;
     }
 
     /**
-     * Set retractive width.
+     * Clear sync view.
      * 
-     * @param retractiveWidth
-     *            retractive width.
+     * @param syncScrollView
+     * 
      */
-    public void setRetractiveWidth(int retractiveWidth) {
-        retractiveWidth_ = retractiveWidth;
-        retractiveWidthDouble_ = retractiveWidth_ * 2;
+    public void clearSyncScrollView() {
+        this.syncScrollView_ = null;
+    }
+
+    /**
+     * Return the flag.
+     * 
+     * @return true: move when this is on scroll changed. false: don't move when
+     *         this is on scroll changed.
+     */
+    public boolean isMoveOnScrollChanged() {
+        return moveOnScrollChangedFlag_;
+    }
+
+    /**
+     * Set the flag.
+     * 
+     * @param move
+     *            true: move when this is on scroll changed. false: don't move
+     *            when this is on scroll changed.
+     */
+    public void setMoveOnScrollChanged(boolean move) {
+        this.moveOnScrollChangedFlag_ = move;
     }
 
     /**
@@ -165,14 +185,20 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
         rightPosition_ = getChildAt(0).getRight() - retractiveWidth_ - getWidth();
         if (((LinearLayout) getChildAt(0)).getChildAt(1).getWidth() < getWidth()) {
             scrollTo(retractiveWidth_, getScrollY());
-            syncScrollView_.scrollTo(retractiveWidth_, syncScrollView_.getScrollY());
+            if (syncScrollView_ != null) {
+                syncScrollView_.scrollTo(retractiveWidth_, syncScrollView_.getScrollY());
+            }
         } else {
             setMoveOnScrollChanged(true);
-            syncScrollView_.setMoveOnScrollChanged(true);
+            if (syncScrollView_ != null) {
+                syncScrollView_.setMoveOnScrollChanged(true);
+            }
             scrollTo(0, getScrollY());
             fullScroll(HorizontalScrollView.FOCUS_RIGHT);
-            syncScrollView_.scrollTo(0, syncScrollView_.getScrollY());
-            syncScrollView_.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+            if (syncScrollView_ != null) {
+                syncScrollView_.scrollTo(0, syncScrollView_.getScrollY());
+                syncScrollView_.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+            }
         }
     }
 
@@ -182,7 +208,9 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-        syncScrollView_.scrollTo(l, t);
+        if (syncScrollView_ != null) {
+            syncScrollView_.scrollTo(l, t);
+        }
         if (isMoveOnScrollChanged()) {
             if (rightPosition_ < getScrollX() && retractiveWidth_ < rightPosition_) {
                 smoothScrollTo(rightPosition_, getScrollY());
@@ -261,15 +289,19 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     moveOnScrollChangedFlag_ = true;
-                    syncScrollView_.moveOnScrollChangedFlag_ = true;
+                    if (syncScrollView_ != null) {
+                        syncScrollView_.moveOnScrollChangedFlag_ = true;
+                    }
                     if (rightPosition_ < getScrollX()) {
-                        smoothScrollTo(rightPosition_, 0);
+                        scrollTo(rightPosition_, 0);
                     } else if (getScrollX() < retractiveWidth_) {
-                        smoothScrollTo(retractiveWidth_, 0);
+                        scrollTo(retractiveWidth_, 0);
                     }
                 } else if (event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE) {
                     moveOnScrollChangedFlag_ = false;
-                    syncScrollView_.moveOnScrollChangedFlag_ = false;
+                    if (syncScrollView_ != null) {
+                        syncScrollView_.moveOnScrollChangedFlag_ = false;
+                    }
                 }
                 if (getLastAction() == MotionEvent.ACTION_UP && event.getAction() == MotionEvent.ACTION_MOVE) {
                     event.setAction(MotionEvent.ACTION_DOWN);

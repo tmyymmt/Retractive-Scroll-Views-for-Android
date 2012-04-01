@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical" 
+  android:background="#ff0000ff"
+  >
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/background"
+    />
+  <nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView
+    android:id="@+id/scroll_view"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello" />
-
+    android:background="#00000000"
+    >
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      >
+      <TextView
+        android:layout_width="@dimen/retractive_width"
+        android:layout_height="fill_parent"
+        android:background="#ff00ffff"
+        />
+      <TextView
+        android:id="@+id/child_content"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:minWidth="900px"
+        android:text="@string/on_scroll_view"
+        android:background="#ffff0000"
+        />
+      <TextView
+        android:layout_width="@dimen/retractive_width"
+        android:layout_height="fill_parent"
+        android:background="#ff00ff00"
+        />
+    </LinearLayout>
+  </nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
 </LinearLayout>
