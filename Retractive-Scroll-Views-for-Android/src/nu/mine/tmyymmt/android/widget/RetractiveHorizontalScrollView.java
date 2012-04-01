@@ -1,8 +1,10 @@
 package nu.mine.tmyymmt.android.widget;
 
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
+import android.app.Activity;
 import android.content.Context;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
@@ -36,9 +38,10 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     private RetractiveHorizontalScrollView syncScrollView_ = null;
 
     /**
-     * The width of retracting by pixel size.
+     * The width of retracting by pixel size. Default value is the absolute
+     * width of the display in pixels.
      */
-    private int retractiveWidth_ = 300;
+    private int retractiveWidth_ = 0;
 
     /**
      * This is double of retractiveWidth_ by pixel size.
@@ -96,7 +99,8 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     }
 
     /**
-     * Set retractive width by pixel size.
+     * Set retractive width by pixel size. Default value is the absolute width
+     * of the display in pixels.
      * 
      * @param retractiveWidth
      *            retractive width by pixel size.
@@ -104,6 +108,7 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     public void setRetractiveWidth(int retractiveWidth) {
         retractiveWidth_ = retractiveWidth;
         retractiveWidthDouble_ = retractiveWidth_ * 2;
+        updateRetractiveWidth();
     }
 
     /**
@@ -182,24 +187,7 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-        rightPosition_ = getChildAt(0).getRight() - retractiveWidth_ - getWidth();
-        if (((LinearLayout) getChildAt(0)).getChildAt(1).getWidth() < getWidth()) {
-            scrollTo(retractiveWidth_, getScrollY());
-            if (syncScrollView_ != null) {
-                syncScrollView_.scrollTo(retractiveWidth_, syncScrollView_.getScrollY());
-            }
-        } else {
-            setMoveOnScrollChanged(true);
-            if (syncScrollView_ != null) {
-                syncScrollView_.setMoveOnScrollChanged(true);
-            }
-            scrollTo(0, getScrollY());
-            fullScroll(HorizontalScrollView.FOCUS_RIGHT);
-            if (syncScrollView_ != null) {
-                syncScrollView_.scrollTo(0, syncScrollView_.getScrollY());
-                syncScrollView_.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
-            }
-        }
+        init2();
     }
 
     /**
@@ -281,9 +269,14 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     }
 
     /**
-     * Initialize this object.
+     * Initialization.
      */
     private void init() {
+        if (getContext() instanceof Activity && retractiveWidth_ == 0) {
+            DisplayMetrics metrics = new DisplayMetrics();
+            ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+            setRetractiveWidth(metrics.widthPixels);
+        }
         setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -310,6 +303,39 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
                 return false;
             }
         });
+    }
+
+    /**
+     * Initialization 2. This is after GUI was inflate.
+     */
+    private void init2() {
+        updateRetractiveWidth();
+
+        rightPosition_ = getChildAt(0).getRight() - retractiveWidth_ - getWidth();
+        if (((LinearLayout) getChildAt(0)).getChildAt(1).getWidth() < getWidth()) {
+            scrollTo(retractiveWidth_, getScrollY());
+            if (syncScrollView_ != null) {
+                syncScrollView_.scrollTo(retractiveWidth_, syncScrollView_.getScrollY());
+            }
+        } else {
+            setMoveOnScrollChanged(true);
+            if (syncScrollView_ != null) {
+                syncScrollView_.setMoveOnScrollChanged(true);
+            }
+            scrollTo(0, getScrollY());
+            fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+            if (syncScrollView_ != null) {
+                syncScrollView_.scrollTo(0, syncScrollView_.getScrollY());
+                syncScrollView_.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+            }
+        }
+    }
+
+    private void updateRetractiveWidth() {
+        if (getChildAt(0) != null) {
+            ((LinearLayout) getChildAt(0)).getChildAt(0).setMinimumWidth(retractiveWidth_);
+            ((LinearLayout) getChildAt(0)).getChildAt(2).setMinimumWidth(retractiveWidth_);
+        }
     }
 
     /**

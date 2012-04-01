@@ -1,6 +1,7 @@
-package nu.mine.tmyymmt.android.widget.example;
+package nu.mine.tmyymmt.android.widget.retractivehorizontalscrollviewexample;
 
-import nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView;
+// import nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView;
+import nu.mine.tmyymmt.android.widget.example.R;
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -9,6 +10,8 @@ import android.os.Bundle;
  * 
  * This is a example for
  * nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView.
+ * 
+ * @see nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView
  * 
  * @author Tomoya Yamamoto <a
  *         href="mailto:tmyymmt+github@gmail.com">&lt;tmyymmt+
@@ -21,7 +24,10 @@ public class RetractiveHorizontalScrollViewExampleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        RetractiveHorizontalScrollView scrollView = (RetractiveHorizontalScrollView) findViewById(R.id.scroll_view);
-        scrollView.setRetractiveWidth(getResources().getDimensionPixelSize(R.dimen.retractive_width));
+        // If you want to change the retractive width then you can change it by
+        // this way.
+        // RetractiveHorizontalScrollView scrollView =
+        // (RetractiveHorizontalScrollView) findViewById(R.id.scroll_view);
+        // scrollView.setRetractiveWidth(300);
     }
 }
