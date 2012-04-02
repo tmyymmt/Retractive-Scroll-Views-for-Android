@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RetractiveHorizontalScrollView Example</string>
+    <string name="on_scroll_view">This is a content of RetractiveHorizontalScrollView.</string>
+    <string name="background">This is a background.</string>
+</resources>
