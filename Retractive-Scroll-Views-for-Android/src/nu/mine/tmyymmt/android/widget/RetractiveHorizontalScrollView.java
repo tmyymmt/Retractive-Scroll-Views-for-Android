@@ -1,5 +1,7 @@
 package nu.mine.tmyymmt.android.widget;
 
+import java.util.ArrayList;
+
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -35,7 +37,7 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     /**
      * RetractiveHorizontalScrollViews to sync with this object.
      */
-    private RetractiveHorizontalScrollView syncScrollView_ = null;
+    private ArrayList<RetractiveHorizontalScrollView> syncScrollViews_ = null;
 
     /**
      * The width of retracting by pixel size. Default value is the absolute
@@ -123,40 +125,39 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     /**
      * Return sync views.
      * 
-     * @return
+     * @return sync views
      */
-    public RetractiveHorizontalScrollView getSyncScrollView() {
-        return syncScrollView_;
+    public ArrayList<RetractiveHorizontalScrollView> getSyncScrollViews() {
+        return syncScrollViews_;
     }
 
     /**
      * Add sync view.
      * 
      * @param syncScrollView
-     * 
+     *            sync views.
      */
     public void addSyncScrollView(RetractiveHorizontalScrollView syncScrollView) {
-        this.syncScrollView_ = syncScrollView;
+        if (syncScrollView != null) {
+            syncScrollViews_.add(syncScrollView);
+        }
     }
 
     /**
      * Remove sync view.
      * 
      * @param syncScrollView
-     * 
+     *            sync views.
      */
     public void removeSyncScrollView(RetractiveHorizontalScrollView syncScrollView) {
-        this.syncScrollView_ = null;
+        syncScrollViews_.remove(syncScrollView);
     }
 
     /**
      * Clear sync view.
-     * 
-     * @param syncScrollView
-     * 
      */
     public void clearSyncScrollView() {
-        this.syncScrollView_ = null;
+        syncScrollViews_.clear();
     }
 
     /**
@@ -196,8 +197,8 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-        if (syncScrollView_ != null) {
-            syncScrollView_.scrollTo(l, t);
+        for (RetractiveHorizontalScrollView syncView : syncScrollViews_) {
+            syncView.scrollTo(l, t);
         }
         if (isMoveOnScrollChanged()) {
             if (rightPosition_ < getScrollX() && retractiveWidth_ < rightPosition_) {
@@ -272,6 +273,7 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
      * Initialization.
      */
     private void init() {
+        syncScrollViews_ = new ArrayList<RetractiveHorizontalScrollView>();
         if (getContext() instanceof Activity && retractiveWidth_ == 0) {
             DisplayMetrics metrics = new DisplayMetrics();
             ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -282,8 +284,8 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     moveOnScrollChangedFlag_ = true;
-                    if (syncScrollView_ != null) {
-                        syncScrollView_.moveOnScrollChangedFlag_ = true;
+                    for (RetractiveHorizontalScrollView syncView : syncScrollViews_) {
+                        syncView.moveOnScrollChangedFlag_ = true;
                     }
                     if (rightPosition_ < getScrollX()) {
                         scrollTo(rightPosition_, 0);
@@ -292,8 +294,8 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
                     }
                 } else if (event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE) {
                     moveOnScrollChangedFlag_ = false;
-                    if (syncScrollView_ != null) {
-                        syncScrollView_.moveOnScrollChangedFlag_ = false;
+                    for (RetractiveHorizontalScrollView syncView : syncScrollViews_) {
+                        syncView.moveOnScrollChangedFlag_ = false;
                     }
                 }
                 if (getLastAction() == MotionEvent.ACTION_UP && event.getAction() == MotionEvent.ACTION_MOVE) {
@@ -314,19 +316,19 @@ public class RetractiveHorizontalScrollView extends android.widget.HorizontalScr
         rightPosition_ = getChildAt(0).getRight() - retractiveWidth_ - getWidth();
         if (((LinearLayout) getChildAt(0)).getChildAt(1).getWidth() < getWidth()) {
             scrollTo(retractiveWidth_, getScrollY());
-            if (syncScrollView_ != null) {
-                syncScrollView_.scrollTo(retractiveWidth_, syncScrollView_.getScrollY());
+            for (RetractiveHorizontalScrollView syncView : syncScrollViews_) {
+                syncView.scrollTo(retractiveWidth_, syncView.getScrollY());
             }
         } else {
             setMoveOnScrollChanged(true);
-            if (syncScrollView_ != null) {
-                syncScrollView_.setMoveOnScrollChanged(true);
+            for (RetractiveHorizontalScrollView syncView : syncScrollViews_) {
+                syncView.setMoveOnScrollChanged(true);
             }
             scrollTo(0, getScrollY());
             fullScroll(HorizontalScrollView.FOCUS_RIGHT);
-            if (syncScrollView_ != null) {
-                syncScrollView_.scrollTo(0, syncScrollView_.getScrollY());
-                syncScrollView_.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
+            for (RetractiveHorizontalScrollView syncView : syncScrollViews_) {
+                syncView.scrollTo(0, syncView.getScrollY());
+                syncView.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
             }
         }
     }
