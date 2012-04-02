@@ -1,9 +1,9 @@
 package nu.mine.tmyymmt.android.widget.retractivehorizontalscrollviewexample;
 
-// import nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView;
-import nu.mine.tmyymmt.android.widget.example.R;
 import android.app.Activity;
 import android.os.Bundle;
+
+//import nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView;
 
 /**
  * Simple Example for Retractive Scroll Views for Android.
