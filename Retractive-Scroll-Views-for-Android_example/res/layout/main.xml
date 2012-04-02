@@ -30,7 +30,7 @@
         android:id="@+id/child_content"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:minWidth="900px"
+        android:minWidth="2000px"
         android:text="@string/on_scroll_view"
         android:background="#ffff0000"
         />
