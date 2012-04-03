@@ -14,13 +14,9 @@ RetractiveHorizontalScrollView は android.widget.HorizontalScrollView を継承
 サンプル動画
 --------
 
-### びよーん ###
+[びよーん](http://www.youtube.com/watch?v=k03AD98olUY)
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/k03AD98olUY" frameborder="0" allowfullscreen></iframe>
-
-### 複数のRetractiveHorizontalScrollViewを同期する ###
-
-<iframe width="560" height="315" src="http://www.youtube.com/embed/9KZgaGCwQgI" frameborder="0" allowfullscreen></iframe>
+[複数のRetractiveHorizontalScrollViewを同期する](http://www.youtube.com/watch?v=9KZgaGCwQgI)
 
 ダウンロード
 ------

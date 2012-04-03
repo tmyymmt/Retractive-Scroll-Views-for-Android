@@ -14,13 +14,9 @@ In the future, I might add RetractiveVerticalScrollView extends android.widget.S
 Sample movies
 --------
 
-### Scrolling a retractive scroll view ###
+[Scrolling a retractive scroll view](http://www.youtube.com/watch?v=k03AD98olUY)
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/k03AD98olUY" frameborder="0" allowfullscreen></iframe>
-
-### Sync three scroll views ###
-
-<iframe width="560" height="315" src="http://www.youtube.com/embed/9KZgaGCwQgI" frameborder="0" allowfullscreen></iframe>
+[Sync three scroll views](http://www.youtube.com/watch?v=9KZgaGCwQgI)
 
 Download
 ------
