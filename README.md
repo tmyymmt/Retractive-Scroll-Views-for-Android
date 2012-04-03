@@ -32,7 +32,7 @@ How to use
 
 ### How to retract a view ###
 
-Create layout as this format. And use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
+Create layout as this format. And use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv]. Complete example is [here][ex1].
 
 	<nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
 	  <LinearLayout>
@@ -42,11 +42,9 @@ Create layout as this format. And use [RetractiveHorizontalScrollView][rhsv] as 
 	  </LinearLayout>
 	</nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
 
-Complete example is [here](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example/).
-
 ### How to sync some RetractiveHorizontalScrollViews ###
 
-Add a view which you want to sync to another view by [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv]. And Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
+Add a view which you want to sync to another view by [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv]. And Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv]. Complete example is [here][ex2].
 
 	RetractiveHorizontalScrollView scrollView1 = (RetractiveHorizontalScrollView) findViewById(R.id.scroll_view);
 	RetractiveHorizontalScrollView scrollView2 = (RetractiveHorizontalScrollView) findViewById(R.id.scroll_view2);
@@ -67,9 +65,9 @@ Add a view which you want to sync to another view by [RetractiveHorizontalScroll
 Examples
 --------
 
-1. Retractive-Scroll-Views-for-Android_example is [here](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example/).
+1. Retractive-Scroll-Views-for-Android_example is [here][ex1].
 
-2. Retractive-Scroll-Views-for-Android_example_sync is [here](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example_sync/).
+2. Retractive-Scroll-Views-for-Android_example_sync is [here][ex2].
 
 Javadoc
 --------
@@ -100,3 +98,5 @@ You can see good ideas for about this kind of thing in Japanese.
 [aboutme]: http://about.me/tmyymmt "about me"
 [hsv]: http://developer.android.com/reference/android/widget/HorizontalScrollView.html
 [rhsv]: http://tmyymmt.github.com/Retractive-Scroll-Views-for-Android/index.html?nu/mine/tmyymmt/android/widget/RetractiveHorizontalScrollView.html
+[ex1]: https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example/
+[ex2]: https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example_sync/
