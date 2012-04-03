@@ -13,7 +13,11 @@ RetractiveHorizontalScrollView は android.widget.HorizontalScrollView を継承
 サンプル動画
 --------
 
-...
+### びよーん ###
+
+
+### 複数のRetractiveHorizontalScrollViewを同期する ###
+
 
 ダウンロード
 ------
@@ -28,19 +32,44 @@ RetractiveHorizontalScrollView は android.widget.HorizontalScrollView を継承
 
 ### びよーん ###
 
-1. [RetractiveHorizontalScrollView][rhsv] を [android.widget.HorizontalScrollView][hsv] と同じように使います。
+このようなレイアウトを作成し、[RetractiveHorizontalScrollView][rhsv]を[android.widget.HorizontalScrollView][hsv]と同様に使用すればOKです。具体例は[こちら][ex1]。
 
-### 2つのRetractiveHorizontalScrollViewを同期する ###
+	<nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
+	  <LinearLayout>
+	    <TextView/> <!-- left side -->
+	    <TextView/> <!-- main content -->
+	    <TextView/> <!-- right side -->
+	  </LinearLayout>
+	</nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
 
-1. [RetractiveHorizontalScrollView][rhsv] を [android.widget.HorizontalScrollView][hsv] と同じように使います。
-2. [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv2] を使って、ビューをもう一方のビューに追加します。
+### 複数のRetractiveHorizontalScrollViewを同期する ###
+
+同期したい[RetractiveHorizontalScrollView][rhsv]を[RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv]で追加します。具体例は[こちら][ex2]。
+
+	RetractiveHorizontalScrollView scrollView1 = (RetractiveHorizontalScrollView) findViewById(R.id.scroll_view);
+	RetractiveHorizontalScrollView scrollView2 = (RetractiveHorizontalScrollView) findViewById(R.id.scroll_view2);
+	RetractiveHorizontalScrollView scrollView3 = (RetractiveHorizontalScrollView) findViewById(R.id.scroll_view3);
+	
+	// add scroll views which you want to sync with scrollView1.
+	scrollView1.addSyncScrollView(scrollView2);
+	scrollView1.addSyncScrollView(scrollView3);
+	
+	// add scroll views which you want to sync with scrollView2.
+	scrollView2.addSyncScrollView(scrollView1);
+	scrollView2.addSyncScrollView(scrollView3);
+	
+	// add scroll views which you want to sync with scrollView3.
+	scrollView3.addSyncScrollView(scrollView1);
+	scrollView3.addSyncScrollView(scrollView2);
 
 サンプルコード
 --------
 
-動画と同じサンプルコードです。
+上の動画と同じサンプルコードです。
 
-...
+Retractive-Scroll-Views-for-Android_example is [here][ex1].
+
+Retractive-Scroll-Views-for-Android_example_sync is [here][ex2].
 
 Javadoc
 --------
@@ -70,5 +99,6 @@ Distributed under the [MIT License](http://www.opensource.org/licenses/mit-licen
 [profile_image]: http://tmyymmt.mine.nu/profile/profile-sq_16.png "Profile Image"
 [aboutme]: http://about.me/tmyymmt "about me"
 [hsv]: http://developer.android.com/reference/android/widget/HorizontalScrollView.html
-[rhsv]: http://tmyymmt.github.com/Retractive-Scroll-Views-for-Android/
-[rhsv2]: http://tmyymmt.github.com/Retractive-Scroll-Views-for-Android/
+[rhsv]: http://tmyymmt.github.com/Retractive-Scroll-Views-for-Android/index.html?nu/mine/tmyymmt/android/widget/RetractiveHorizontalScrollView.html
+[ex1]: https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example/
+[ex2]: https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example_sync/
