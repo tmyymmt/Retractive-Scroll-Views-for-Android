@@ -28,12 +28,21 @@ How to use
 
 ### How to retract a view ###
 
-1. Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
+1. Create layout as this format. Full version of res/layout/main.xml is [here](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example/res/layout/main.xml).
+
+<script src="https://gist.github.com/2288618.js"> </script>
+
+2. Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
 
 ### How to sync two RetractiveHorizontalScrollViews ###
 
-1. Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
-2. Add a view to another view by [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv2].
+1. Create layout as this format. Full version of res/layout/main.xml is [here](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example/res/layout/main.xml).
+
+<script src="https://gist.github.com/2288618.js"> </script>
+
+2. Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
+
+3. Add a view which you want to sync to another view by [RetractiveHorizontalScrollView#addSyncScrollView(RetractiveHorizontalScrollView syncScrollView)][rhsv2].
 
 Sample code
 --------
