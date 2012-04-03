@@ -30,7 +30,31 @@ How to use
 
 1. Create layout as this format. Full version of res/layout/main.xml is [here](https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android/blob/master/Retractive-Scroll-Views-for-Android_example/res/layout/main.xml).
 
-<script src="https://gist.github.com/2288618.js"> </script>
+     <nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView1>
+       <LinearLayout>
+         <TextView />
+         <TextView android:id="@+id/child_content" />
+         <TextView />
+       </LinearLayout>
+     </nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
+
+	     <nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView2>
+	       <LinearLayout>
+	         <TextView />
+	         <TextView android:id="@+id/child_content" />
+	         <TextView />
+	       </LinearLayout>
+	     </nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
+
+<pre><code>
+     <nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
+       <LinearLayout>
+         <TextView />
+         <TextView android:id="@+id/child_content" />
+         <TextView />
+       </LinearLayout>
+     </nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView>
+</code></pre>
 
 2. Use [RetractiveHorizontalScrollView][rhsv] as [android.widget.HorizontalScrollView][hsv].
 
