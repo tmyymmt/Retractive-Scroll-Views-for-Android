@@ -5,7 +5,8 @@ Retractive Scroll Views for Android
 
 Android向けのライブラリです。
 端までスクロースした時にびよーんと伸びるHorizontalScrollViewです。
-複数のビューのスクロールの同期もできます。
+複数のHorizontalScrollViewのスクロールの同期もできます。
+Android 1.6 (API Level4) 以上に対応しています。
 
 RetractiveHorizontalScrollView は android.widget.HorizontalScrollView を継承しています。
 将来的には、ご要望次第で、android.widget.ScrollView を継承した RetractiveVerticalScrollViewも追加するかもしれません。
@@ -15,9 +16,11 @@ RetractiveHorizontalScrollView は android.widget.HorizontalScrollView を継承
 
 ### びよーん ###
 
+<iframe width="560" height="315" src="http://www.youtube.com/embed/k03AD98olUY" frameborder="0" allowfullscreen></iframe>
 
 ### 複数のRetractiveHorizontalScrollViewを同期する ###
 
+<iframe width="560" height="315" src="http://www.youtube.com/embed/9KZgaGCwQgI" frameborder="0" allowfullscreen></iframe>
 
 ダウンロード
 ------
@@ -74,7 +77,7 @@ Retractive-Scroll-Views-for-Android_example_sync is [here][ex2].
 Javadoc
 --------
 
-詳細は [javadoc][rhsv] を視て下さい。
+詳細は [javadoc][rhsv] をご覧下さい。
   
 ライセンス
 ----------

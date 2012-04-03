@@ -5,7 +5,8 @@ Retractive Scroll Views for Android
 
 This is a library for Android.
 This is a retractable HorizontalScrollView.
-You can also sync scrolling in views.
+You can also sync scrolling in HorizontalScrollViews.
+It supports Android 1.6 (API Level4) or later.
 
 RetractiveHorizontalScrollView extends android.widget.HorizontalScrollView.
 In the future, I might add RetractiveVerticalScrollView extends android.widget.ScrollView, if you want it.
@@ -15,9 +16,11 @@ Sample movies
 
 ### Scrolling a retractive scroll view ###
 
+<iframe width="560" height="315" src="http://www.youtube.com/embed/k03AD98olUY" frameborder="0" allowfullscreen></iframe>
 
 ### Sync three scroll views ###
 
+<iframe width="560" height="315" src="http://www.youtube.com/embed/9KZgaGCwQgI" frameborder="0" allowfullscreen></iframe>
 
 Download
 ------
