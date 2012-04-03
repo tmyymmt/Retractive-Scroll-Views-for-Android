@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
  * You can also sync scrolling in views.
  * 
  * @version 0.1
+ * @see https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android
  * @author Tomoya Yamamoto <a
  *         href="mailto:tmyymmt+github@gmail.com">&lt;tmyymmt+
  *         github@gmail.com&gt;</a> <a

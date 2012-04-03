@@ -11,8 +11,7 @@ import android.os.Bundle;
  * This is a example for
  * nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView.
  * 
- * @see nu.mine.tmyymmt.android.widget.RetractiveHorizontalScrollView
- * 
+ * @see https://github.com/tmyymmt/Retractive-Scroll-Views-for-Android
  * @author Tomoya Yamamoto <a
  *         href="mailto:tmyymmt+github@gmail.com">&lt;tmyymmt+
  *         github@gmail.com&gt;</a> <a
